@@ -6,10 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rajib's Bank</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Welcome to Rajib's Bank</h1>
+    <div id="login-area">
+        <h1 class="text-center">Welcome To Our Bank</h1>
+        <div class="submit-area">
+            <h2>Login</h2>
+            <input type="text" class="form-control" placeholder="Enter Email Address">
+            <br>
+            <input type="password" class="form-control" placeholder="Enter Your Password">
+            <br>
+            <button id="login-btn" class="btn btn-success">Enter</button>
+        </div>
+    </div>
+    <div id="transaction-area">
+        <h1>Transaction </h1>
+    </div>
+
+
+    <script>
+        const loginBtn = document.getElementById("login-btn")
+        loginBtn.addEventListener("click", function () {
+            const loginArea = document.getElementById("login-area");
+            loginArea.style.display = "none";
+            const transactionArea = document.getElementById("transaction-area");
+            transactionArea.style.display = "block";
+        })
+
+
+
+
+
+    </script>
 
 </body>
 
