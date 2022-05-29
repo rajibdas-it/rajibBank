@@ -13,7 +13,7 @@
 
 <body>
     <div id="login-area">
-        <h1 class="text-center">Welcome To Our Bank</h1>
+        <h1 class="text-center">Welcome To Rajib's Bank</h1>
         <div class="submit-area">
             <h2>Login</h2>
             <input type="text" class="form-control" placeholder="Enter Email Address">
@@ -34,7 +34,7 @@
             <div class="col-md-4">
                 <div class="withdraw status ">
                     <h5>Withdraw</h5>
-                    <h2>$<span class="currentWithdraw">00</span></h2>
+                    <h2>$<span id="currentWithdraw">00</span></h2>
                 </div>
             </div>
             <div class="col-md-4">
@@ -104,10 +104,14 @@
             const currentWithdrawString = document.getElementById("currentWithdraw").innerText;
             const currentWithdraw = parseFloat(currentWithdrawString);
             const totalWithdraw = currentWithdraw + withdrawAmount
+            document.getElementById("currentWithdraw").innerText = totalWithdraw;
 
+            const currentBalanceString = document.getElementById("currentBalance").innerText;
+            const currentBalance = parseFloat(currentBalanceString);
+            const totalBalance = currentBalance - withdrawAmount;
+            document.getElementById("currentBalance").innerText = totalBalance;
+            document.getElementById("withdraw-amt").value = "";
 
-
-            console.log(typeof withdrawAmtString)
         })
 
 
