@@ -12,55 +12,59 @@
 </head>
 
 <body>
-    <div id="login-area">
-        <h1 class="text-center">Welcome To Rajib's Bank</h1>
-        <div class="submit-area">
-            <h2>Login</h2>
-            <input type="text" class="form-control" placeholder="Enter Email Address">
-            <br>
-            <input type="password" class="form-control" placeholder="Enter Your Password">
-            <br>
-            <button id="login-btn" class="btn btn-success">Enter</button>
-        </div>
-    </div>
-    <div id="transaction-area">
-        <div class="row">
-            <div class="col-md-4 mar">
-                <div class="deposit status">
-                    <h5>Deposit</h5>
-                    <h2>$<span id="currentDeposit">00</span></h2>
-                </div>
-            </div>
-            <br>
-            <div class="col-md-4 mar">
-                <div class="withdraw status ">
-                    <h5>Withdraw</h5>
-                    <h2>$<span id="currentWithdraw">00</span></h2>
-                </div>
-            </div>
-            <div class="col-md-4 mar">
-                <div class="balance status">
-                    <h5>Balance</h5>
-                    <h2>$<span id="currentBalance">00</span></h2>
-                </div>
+    <button id="dark-btn" class="btn btn-dark">Dark Screen</button>
+    <button id="white-btn" class="btn btn-success">White Screen</button>
+    <div id="my-body">
+        <div id="login-area">
+            <h1 class="text-center">Welcome To Rajib's Bank</h1>
+            <div class="submit-area">
+                <h2>Login</h2>
+                <input type="text" class="form-control" placeholder="Enter Email Address">
+                <br>
+                <input type="password" class="form-control" placeholder="Enter Your Password">
+                <br>
+                <button id="login-btn" class="btn btn-success">Enter</button>
             </div>
         </div>
+        <div id="transaction-area">
+            <div class="row">
+                <div class="col-md-4 mar">
+                    <div class="deposit status">
+                        <h5>Deposit</h5>
+                        <h2>$<span id="currentDeposit">00</span></h2>
+                    </div>
+                </div>
+                <br>
+                <div class="col-md-4 mar">
+                    <div class="withdraw status ">
+                        <h5>Withdraw</h5>
+                        <h2>$<span id="currentWithdraw">00</span></h2>
+                    </div>
+                </div>
+                <div class="col-md-4 mar">
+                    <div class="balance status">
+                        <h5>Balance</h5>
+                        <h2>$<span id="currentBalance">00</span></h2>
+                    </div>
+                </div>
+            </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="submit-area">
-                    <h5>Deposit</h5>
-                    <input id="deposit-amt" type="text" class="form-control" placeholder="$ you want to deposit">
-                    <br>
-                    <button id="add-deposit" class="btn btn-success">Deposit</button>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="submit-area">
+                        <h5>Deposit</h5>
+                        <input id="deposit-amt" type="text" class="form-control" placeholder="$ you want to deposit">
+                        <br>
+                        <button id="add-deposit" class="btn btn-success">Deposit</button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="submit-area">
-                    <h5>Withdraw</h5>
-                    <input id="withdraw-amt" type="text" class="form-control" placeholder="$ you want to withdraw">
-                    <br>
-                    <button id="add-withdraw" class="btn btn-success">Withdraw</button>
+                <div class="col-md-6">
+                    <div class="submit-area">
+                        <h5>Withdraw</h5>
+                        <input id="withdraw-amt" type="text" class="form-control" placeholder="$ you want to withdraw">
+                        <br>
+                        <button id="add-withdraw" class="btn btn-success">Withdraw</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,6 +72,21 @@
 
 
     <script>
+        const darkBtn = document.getElementById("dark-btn");
+        darkBtn.addEventListener("click", function () {
+            const myBody = document.getElementsByTagName("body")[0];
+            myBody.style.backgroundColor = "Black";
+            myBody.style.color = "white"
+        })
+
+        const whiteBtn = document.getElementById("white-btn");
+        whiteBtn.addEventListener("click", function () {
+            const myBody = document.getElementsByTagName("body")[0];
+            myBody.style.backgroundColor = "white";
+            myBody.style.color = "black"
+        })
+
+
         // Login Button event handler
         const loginBtn = document.getElementById("login-btn")
         loginBtn.addEventListener("click", function () {
